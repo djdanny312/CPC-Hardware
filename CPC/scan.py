@@ -70,12 +70,12 @@ def scan(display, maxtime):
     
            
     # If its barcode we assume a big one is a valid VacuID
-    if codeType == 'QRCODE':
-        print(len(codeData))
-        if len(codeData) > 1000:
-            print('Probably a VacuID')
-            valid = True
-    else:
-        print('Unsupported Type:', codeType)
+    # if codeType == 'QRCODE':
+    #     print(len(codeData))
+    #     if len(codeData) > 1000:
+    #         print('Probably a VacuID')
+    #         valid = True
+    # else:
+    #     print('Unsupported Type:', codeType)
 
-    return valid
+    return codeData
