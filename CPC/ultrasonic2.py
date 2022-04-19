@@ -6,12 +6,12 @@ import time
 GPIO.setmode(GPIO.BCM)
 
 #Set GPIO Pins
-GPIO_TRIGGER = 16
-GPIO_ECHO = 20
+GPIO_TRIGGER = 20
+GPIO_ECHO = 21
 
 #Initialize input/output directions
-GPIO.setup(GPIO.TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO.ECHO, GPIO.IN)
+GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+GPIO.setup(GPIO_ECHO, GPIO.IN)
 
 def distance2():
     #set Trigger to HIGH
@@ -35,3 +35,13 @@ def distance2():
     distance = (TimeElapsed * 34300) / 2
     
     return distance
+
+if __name__=='__main__':
+    
+    while True:
+        dist= distance2()
+        time.sleep(0.5)
+        try:
+            print("the distance of Ultrasonic 2 in cm:",dist)
+        except KeyboardInterrupt:
+            print("Program interrupted by user")

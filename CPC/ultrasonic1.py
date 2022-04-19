@@ -10,8 +10,8 @@ GPIO_TRIGGER = 23
 GPIO_ECHO = 24
 
 #Initialize input/output directions
-GPIO.setup(GPIO.TRIGGER, GPIO.OUT)
-GPIO.setup(GPIO.ECHO, GPIO.IN)
+GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
+GPIO.setup(GPIO_ECHO, GPIO.IN)
 
 def distance1():
     #set Trigger to HIGH
@@ -35,3 +35,15 @@ def distance1():
     distance = (TimeElapsed * 34300) / 2
     
     return distance
+
+
+if __name__=='__main__':
+    
+    while True:
+        dist= distance1()
+        time.sleep(0.5)
+        try:
+            print("the distance in cm:",dist)
+        except KeyboardInterrupt:
+            print("Program interrupted by user")
+            
