@@ -1,21 +1,19 @@
 from datetime import *
+from hashlib import sha256
 
-def hashFunc():
+def hashFunc(salt):
     now = datetime.now()
-    toHash= str(now.day) + str(now.hour) + str(now.minute)
     
-    if now.minute % 5==0:
-        hashed = str(hash(toHash))
-        if hashed<0:
-            hashed = hashed * -1
-        return hashed
+    toHash= str(now.day) + str(now.hour) + str((now.minute -5)//5)
+    prev = sha256((toHash+salt).encode("utf-8")).hexdigest()
     
-        
-    else:
-        print("Not a multiple of 5, rounding... \n")
-        rounded = 5 * round( hash(toHash) / 5)
-        if rounded<0:
-            rounded = rounded * -1
-        return str(rounded)
+    toHash= str(now.day) + str(now.hour) + str(now.minute//5)
+    curr = sha256((toHash+salt).encode("utf-8")).hexdigest()
+    
+    result = (prev,curr)
+    return result
+    
+
 if __name__=="__main__":
-    print(hashFunc())
+    tup = hashFunc("This is a salt")
+    print(tup)
