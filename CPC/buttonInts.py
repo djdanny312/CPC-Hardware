@@ -12,5 +12,7 @@ def buttonInterrupt():
     toCompare = hashFunc("salt")
     if data in toCompare:
         callGSM()
+    else:
+        print("Code does not match")
 
 buttonPress.when_pressed = buttonInterrupt
