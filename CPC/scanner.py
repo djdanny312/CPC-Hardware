@@ -71,9 +71,9 @@ def scan(display, maxtime):
     print("The QR code says",codeData)
     return codeData
 
-# if __name__== '__main__':
-#     try:
-#         
-#         scan(True, 12)
-#     except KeyboardInterrupt:
-#         print("Stopped by the user")
+if __name__== '__main__':
+    try:
+        
+        scan(True, 12)
+    except KeyboardInterrupt:
+        print("Stopped by the user")

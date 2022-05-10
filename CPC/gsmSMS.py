@@ -1,19 +1,19 @@
 import serial as ser
+import time
 
-gms = ser.Serial("/dev/ttyS0",115200,timeout= 0.5)
+gsm = ser.Serial("/dev/ttyS0",115200,timeout= 0.5)
 gsm.flush()
 
 def sendSMS(msg):
-    print("Sneding SMS\n")
+    print("Sending SMS\n")
     gsm.write(b'AT+CMFG=1\r\n')
-    sleep(0.5)
-    gsm.write(b'AT+CMGS=\"')
-    serialcmd = args["mobile-Number"]
+    time.sleep(0.5)
+    gsm.write(b'AT+CMGS="+17872374230"')
     gsm.write(b'\"\r\n')
-    sleep(0.5)
+    time.sleep(0.5)
     data = msg
     gsm.write(data.encode())
     gsm.write(b'\x1A')  #CNTRL-Z
-    sleep(3)
-
+    time.sleep(3)
+    print("message sent")
 sendSMS("CPC says Hi")
