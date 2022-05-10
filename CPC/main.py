@@ -2,7 +2,6 @@ from ultrasonic1 import distance1
 from ultrasonic2 import distance2
 from directionChecker import dirCheck
 from scanner import scan
-import gsm
 
 
 if __name__=='__main__':

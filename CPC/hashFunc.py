@@ -15,5 +15,5 @@ def hashFunction(salt):
     
 
 if __name__=="__main__":
-    tup = hashFunction("salt")
+    tup = hashFunction("07b2cc459803eda3730hy5013571fc9fdb48d7f07f4cf335716753249a565833")
     print(tup)

@@ -68,8 +68,8 @@ def scan(display, maxtime):
     codeType = code[0].type
     valid = False
 
-    print("The QR code says",codeData)
-    return codeData
+    print("The QR code says",codeData[:10])
+    return codeData[:10]
 
 if __name__== '__main__':
     try:
