@@ -10,19 +10,16 @@ import buttonInts
 if __name__=='__main__':
     #run main program
     try:
-        
-
         #while loop for the ultra sonic sensors   
         while(True):
             timedRefresh()
+            #check distantance by polling
             dirCheck()
-            dir2= distance2()
+            dir2 = distance2()
             #if second Ultrasensor is HIGH(distance less than 50) open arm 
             if dir2<=distance_to_detect:
                 executeBT()
-            
-                    
-            
+                      
     except KeyboardInterrupt:
         print("Keyboard Exception catched.")
     

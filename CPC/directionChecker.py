@@ -73,8 +73,7 @@ def dirCheck():
                 dirFlag=-1
                 if dist1> distance_to_detect:
                     flag1 = False
-                    texit= time.time()
-                            
+                    texit= time.time()                           
                     count-=1
                     if count<0:
                         count=0
@@ -83,5 +82,7 @@ def dirCheck():
                     pushParkCount(count)
                     time.sleep(3)
                     return count
+                
 def refresh():
     pushParkCount(count)
+    time.sleep(1)

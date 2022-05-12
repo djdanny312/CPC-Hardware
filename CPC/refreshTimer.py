@@ -7,12 +7,14 @@ from directionChecker import refresh
 #using thread to run events concurrently
 def timedRefresh():
     #function to execute when timer is done
-    def timeout():
-        print("timer over")
-        refresh()
+    try:
+        def timeout():
+            print("timer over")
+            refresh()
 
-    t = Timer(minutes_for_timer*60, timeout)
-    t.start()
-    print(t.active_count)
-    print(t.current_thread)
-    t.join()
+        t = Timer(0.05*60, timeout)
+        t.start()
+        
+        t.join()
+    except Exception as e:
+        return e

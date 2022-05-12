@@ -52,16 +52,19 @@ def buttonInterrupt():
         refresh()
         executeBT()
         greenLed()
+        time.sleep(1)
         return
      #if the scanned data is not the same as the hashed data Turn on Red led
     elif data and data not in toCompare and data not in adminCompare:
         print("Wrong QR code")
-        redLed()           
+        redLed()
+        time.sleep(1)
         return
     #else the scanned data is empty as there was no QR code scanned, Turn on Red led
     else:
         print("TIMEOUT: There was no code")
         redLed()
+        time.sleep(1)
         return
 #call function when button has been pressed
 buttonPress.when_pressed = buttonInterrupt
