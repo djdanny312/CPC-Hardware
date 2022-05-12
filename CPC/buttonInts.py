@@ -6,6 +6,7 @@ from requesters import getParkCount,getParkInfo,getParkPass
 from btconnect import executeBT
 from variables import parking_id,camera_timeout
 from leds import redLed,greenLed
+from directionChecker import refresh 
 import time
 
 
@@ -23,7 +24,7 @@ def buttonInterrupt():
     #try getting information depending on the parking id, if there is no existing parking,
     #it will give a Type Error which is handled by exiting the interrupt
     try:
-        park_info = getParkInfo(parking_id)
+        park_info = getParkInfo()
     
         count = park_info["occupancy"]
         max_count = park_info["max_capacity"]
@@ -48,6 +49,7 @@ def buttonInterrupt():
     #if the scanned data is the same as the hashed data give access
     if data in toCompare or data in adminCompare:
         print("GREEN LED ON")
+        refresh()
         executeBT()
         greenLed()
         return
@@ -61,5 +63,5 @@ def buttonInterrupt():
         print("TIMEOUT: There was no code")
         redLed()
         return
-
+#call function when button has been pressed
 buttonPress.when_pressed = buttonInterrupt

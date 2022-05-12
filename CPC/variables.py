@@ -5,3 +5,5 @@ camera_timeout = 15
 esp32BT_address = "AC:67:B2:37:3B:BA"
 admin_user= "daniel.hernandez5@upr.edu"
 admin_pass= "12345678"
+base_url= "https://cpc-uprm.azurewebsites.net/cpc"
+minutes_for_timer=15

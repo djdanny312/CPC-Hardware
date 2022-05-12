@@ -1,5 +1,6 @@
 from bluetooth import *
 from variables import esp32BT_address
+import time
 #most of these functions can be found on pybluez documentation, in PyBluez API
 
 def executeBT():           
@@ -34,6 +35,7 @@ def executeBT():
 
     #send message through Bluetooth on Serial Protocol and closes the socket
     sock.send("access granted")
+    time.sleep(3)
     sock.close()
 
     print("\n--- bye ---\n")

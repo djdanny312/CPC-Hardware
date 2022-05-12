@@ -4,6 +4,7 @@ from directionChecker import dirCheck
 from scanner import scan
 from btconnect import executeBT
 from variables import distance_to_detect
+from refreshTimer import timedRefresh
 import buttonInts
 
 if __name__=='__main__':
@@ -13,12 +14,13 @@ if __name__=='__main__':
 
         #while loop for the ultra sonic sensors   
         while(True):
+            timedRefresh()
             dirCheck()
             dir2= distance2()
             #if second Ultrasensor is HIGH(distance less than 50) open arm 
             if dir2<=distance_to_detect:
                 executeBT()
-                
+            
                     
             
     except KeyboardInterrupt:

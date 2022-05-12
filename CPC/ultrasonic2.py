@@ -36,12 +36,12 @@ def distance2():
     
     return distance
 
-if __name__=='__main__':
-    
-    while True:
-        dist= distance2()
-        time.sleep(0.5)
-        try:
-            print("the distance of Ultrasonic 2 in cm:",dist)
-        except KeyboardInterrupt:
-            print("Program interrupted by user")
+# if __name__=='__main__':
+#     
+#     while True:
+#         dist= distance2()
+#         time.sleep(0.5)
+#         try:
+#             print("the distance of Ultrasonic 2 in cm:",dist)
+#         except KeyboardInterrupt:
+#             print("Program interrupted by user")

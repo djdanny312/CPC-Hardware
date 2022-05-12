@@ -46,7 +46,7 @@ def dirCheck():
                     count+=1
                     print("Someone entered, the count is ",count)
                     print("The direction vehicle entered is: ", dirFlag)
-                    time.sleep(5)
+                    time.sleep(3)
                     pushParkCount(count)
                     return count
                             
@@ -81,6 +81,7 @@ def dirCheck():
                     print("Someone exited, the count is ",count)
                     print("The direction vehicle entered is: ", dirFlag)
                     pushParkCount(count)
-                    time.sleep(5)
+                    time.sleep(3)
                     return count
-                            
+def refresh():
+    pushParkCount(count)
